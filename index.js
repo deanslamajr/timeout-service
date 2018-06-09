@@ -8,6 +8,13 @@ var app = express()
 
 const data = { counts: 0 }
 
+/**
+ * EB Healthcheck
+ */
+app.get('health', (req, res) => {
+  res.sendStatus(200)
+})
+
 app.get('*', (req, res) => {
   // don't respond... ever!
   data.counts++
